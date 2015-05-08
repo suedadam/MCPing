@@ -10,7 +10,7 @@ Compiling it easy!
 
 Grab the dependencies:
 ```bash
-$ github.com/minero/minero/proto/packet
+$ go get github.com/minero/minero/proto/packet
 ```
 
 ### Lastly ###
