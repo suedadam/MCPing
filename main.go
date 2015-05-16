@@ -11,6 +11,10 @@ import (
 )
 
 func main() {
+        if len(os.Args) < 2 {
+                fmt.Printf("Usage: %s <IP>:<port>\n", os.Args[0])
+                os.Exit(2)
+        }
         addr := os.Args[1]
         _, port, err := net.SplitHostPort(addr)
         if len(port) <= 0 {
