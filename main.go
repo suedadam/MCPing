@@ -8,6 +8,7 @@ import (
         "strings"
         "os"
         "github.com/minero/minero/proto/packet"
+        "time"
 )
 
 func main() {
@@ -21,7 +22,7 @@ func main() {
                 addr += ":25565"
         }
 
-        c, err := net.Dial("tcp", addr)
+        c, err := net.DialTimeout("tcp", addr, time.Duration(500*time.Millisecond))
         if err != nil {
                 fmt.Printf("Error connecting!\n%s\n", err)
                 return
